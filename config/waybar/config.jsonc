@@ -1,0 +1,214 @@
+{
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 50,
+  "modules-left": [
+    "custom/launch_rofi",
+    "hyprland/workspaces",
+    "cpu",
+    "memory",
+    "disk",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "custom/lock_screen",
+    "custom/pacman",
+    "clock",
+    "custom/wallpaper",
+    "custom/power_btn"
+  ],
+  "modules-right": [
+    "tray",
+    "custom/power_profile",
+    "temperature",
+    "battery",
+    "backlight",
+    "wireplumber",
+    "pulseaudio#microphone",
+  ],
+
+  // "modules-left"
+  "custom/launch_rofi": {
+    "format": "",
+    "on-click": "~/.config/scripts/waybar/launcher.sh",
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+
+  "cpu": {
+    "interval": 10,
+    "format": " {usage}%",
+    "max-length": 10,
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": " {}%",
+    "max-length": 10,
+    "tooltip": true,
+    "tooltip-format": "Memory - {used:0.1f}GB used",
+  },
+
+  "disk": {
+    "interval": 30,
+    "format": "󰋊 {percentage_used}%",
+    "path": "/home",
+    "tooltip": true,
+    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
+  },
+
+  "hyprland/window": {
+    "format": "{initialClass}"
+  },
+
+  // "modules-center"
+  "custom/lock_screen": {
+    "format": "",
+    "on-click": "swaylock",
+    "tooltip": false
+  },
+
+  "custom/pacman": {
+    "format": "{icon}{}",
+    "return-type": "json",
+    "format-icons": {
+      "pending-updates": " ",
+      "updated": ""
+    },
+    "exec-if": "which waybar-updates",
+    "exec": "waybar-updates"
+  },
+
+  "clock": {
+    "format": "{:%H:%M}  ",
+    "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+    "tooltip-format": "<tt><big>{calendar}</big></tt>",
+    "calendar": {
+      "mode"          : "month",
+      "mode-mon-col"  : 2,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "on-click-right": "mode",
+      "format": {
+        "months":     "<span color='#ffead3'><b>{}</b></span>",
+        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions":  {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+
+  "custom/wallpaper": {
+    "format": " ",
+    "on-click": "~/.config/scripts/waybar/wallselect",
+    "on-click-right": "~/.config/scripts/waybar/randomwallpaper",
+    "tooltip": true,
+    "tooltip-format": "Change wallpaper"
+  },
+
+  "custom/power_btn": {
+    "format": "",
+    "on-click": "wlogout",
+    "tooltip": false
+  },
+
+  // "modules-right"
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+
+  "temperature": {
+    "interval": 1,
+    // "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+    // "input-filename": "temp1_input",
+    "format": " {temperatureC}°C",
+    "critical-threshold": 70,
+    "format-critical": " {temperatureC}°C"
+    // "on-click": "kitty --title btop sh -c 'btop'"
+  },
+
+  "custom/power_profile": {
+    //shows the current power profile and switches to next on click
+    "exec": "~/.config/scripts/waybar/power_profile",
+    "return-type": "json",
+    "interval": 20,
+    "format": "{}",
+    "on-click": "~/.config/scripts/waybar/power_profile next",
+    "signal": 8
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "on-scroll-up": "brightnessctl set 10%+",
+    "on-scroll-down": "brightnessctl set 10%-",
+    "min-length": 6
+  },
+
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "on-click": "pavucontrol",
+    "on-scroll-up": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-",
+    "max-volume": 100,
+    //"format-icons": ["", "", ""]
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    }
+  },
+
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pamixer --default-source -i 5",
+    "on-scroll-down": "pamixer --default-source -d 5",
+    "scroll-step": 5
+  },
+}

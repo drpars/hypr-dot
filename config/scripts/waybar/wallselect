@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#-----------------------------------------------------------
+# WALLPAPERS PATH
+DIR=$(xdg-user-dir PICTURES)/Wallpaper
+
+# Transition config
+bezier=.43,1.19,1,.99
+fps=30 # defult 30
+type="wave" # simple | wipe | any | grow
+duration=3
+swww_opt="--transition-bezier $bezier --transition-fps $fps --transition-type $type --transition-duration $duration"
+
+if pidof swaybg; then
+  pkill swaybg
+fi
+
+astyle() {
+rofi_menu=$(ls $DIR | sort | rofi -dmenu -opacity "75" -hover-select -me-select-entry '' -me-accept-entry MousePrimary)
+swww img $DIR/$rofi_menu $swww_opt
+}
+
+bstyle() {
+selected=$(find "$(xdg-user-dir PICTURES)/Wallpaper" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile; do
+  echo -en "$rfile\x00icon\x1f$(xdg-user-dir PICTURES)/Wallpaper/${rfile}\n"
+done | rofi -dmenu -replace -config ~/.config/rofi/wallselect.rasi)
+swww img $(xdg-user-dir PICTURES)/Wallpaper/$selected $swww_opt
+}
+
+# Choose one of style
+bstyle
+# astyle
+
+if pidof swaybg; then
+  pkill swaybg
+fi

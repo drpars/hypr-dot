@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if pidof rofi; then
+  pkill rofi
+fi
+
+rofi -replace -show
+
+if pidof rofi; then
+  pkill rofi
+fi
