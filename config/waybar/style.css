@@ -1,26 +1,31 @@
 * {
-    font-family: "Jet Brains Mono Nerd Font";
-    font-weight: bold;
-    /* font-size: 14px; */
-    min-height: 30px;
+  font-family: "Jet Brains Mono Nerd Font";
+  font-weight: bold;
+  /* font-size: 14px; */
+  min-height: 30px;
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
-    color: #cdd6f4;
+  background: rgba(21, 18, 27, 0);
+  color: #cdd6f4;
+  /* color: @theme_text_color; */
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
 }
 
 tooltip {
-    background: #1e1e2e;
-    opacity: 0.95;
-    border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #11111b;
+  background: #1e1e2e;
+  opacity: 0.95;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #11111b;
 }
 
-tooltip label{
-    color: #cdd6f4;
+tooltip label {
+  color: #cdd6f4;
 }
 
 /* module left */
@@ -47,10 +52,10 @@ tooltip label{
 #wireplumber,
 #pulseaudio,
 #idle_inhibitor {
-    background: #1e1e2e;
-    opacity: 0.8;
-    padding: 0px 10px;
-    margin-top: 10px;
+  background: #1e1e2e;
+  opacity: 0.8;
+  padding: 0px 10px;
+  margin-top: 10px;
 }
 
 #custom-launch_rofi {
@@ -86,15 +91,17 @@ tooltip label{
   margin-left: 20px;
   border-radius: 10px;
   padding: 10px 20px 10px 20px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 #workspaces button.active {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 #workspaces button:hover {
-    background: #11111b;
-    color: #ebeefa;
+  background: #11111b;
+  color: #ebeefa;
 }
 
 #tray {
@@ -121,11 +128,11 @@ tooltip label{
 }
 
 #bluetooth.on {
-	animation-name: blink-update;
-	animation-duration: 3s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+  animation-name: blink-update;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 #bluetooth.off {
   color: #6c6c74;
@@ -133,13 +140,12 @@ tooltip label{
 #bluetooth.connected {
   color: #ffffff;
 }
-#network.linked{
+#network.linked {
   color: #ffffff;
 }
 #network.diconnected {
   color: #6c6c74;
 }
-
 
 #backlight {
   margin-right: 20px;
@@ -156,17 +162,17 @@ tooltip label{
 }
 
 @keyframes blink-update {
-	to {
-		background-color: dodgerblue;
-	}
+  to {
+    background-color: dodgerblue;
+  }
 }
 
 #custom-pacman {
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 #custom-pacman.pending-updates {
-	animation-name: blink-update;
-	animation-duration: 3s;
+  animation-name: blink-update;
+  animation-duration: 3s;
 }

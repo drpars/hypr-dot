@@ -41,7 +41,7 @@
 
   "hyprland/window": {
     "format": "{title}",
-    "max-length": 75,
+    "max-length": 75
   },
 
   "custom/lock_screen": {
@@ -129,12 +129,13 @@
   },
 
   "network": {
+    "interval": 1,
     "format": "{ifname}",
     "format-wifi": " ",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗 ",
     "format-disconnected": " ", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗 ",
-    "tooltip-format-wifi": "{ifname}\n\n{essid}\t({signalStrength}%)\t{ipaddr}",
+    "tooltip-format-wifi": "{ifname}\n\n{essid}\t({signalStrength}%)\t{ipaddr}\nDown: {bandwidthDownBits}\tUp: {bandwidthUpBits}",
     "tooltip-format-ethernet": "{ifname}  ",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50
@@ -200,6 +201,7 @@
     "on-scroll-down": "pamixer --default-source -d 5",
     "scroll-step": 5
   },
+
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
