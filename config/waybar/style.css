@@ -2,7 +2,7 @@
     font-family: "Jet Brains Mono Nerd Font";
     font-weight: bold;
     /* font-size: 14px; */
-    /* min-height: 32px; */
+    min-height: 30px;
 }
 
 window#waybar {
@@ -40,10 +40,13 @@ tooltip label{
 #tray,
 #temperature,
 #custom-power_profile,
+#bluetooth,
+#network,
 #battery,
 #backlight,
 #wireplumber,
-#pulseaudio {
+#pulseaudio,
+#idle_inhibitor {
     background: #1e1e2e;
     opacity: 0.8;
     padding: 0px 10px;
@@ -54,6 +57,8 @@ tooltip label{
   margin-left: 10px;
   padding: 10px 10px 10px 20px;
   border-radius: 10px 0px 0px 10px;
+  color: #ffffff;
+  font-size: 18px;
 }
 
 #workspaces {
@@ -84,7 +89,7 @@ tooltip label{
 }
 
 #workspaces button.active {
-    color: #e1e6f8;
+    color: #ffffff;
 }
 
 #workspaces button:hover {
@@ -103,12 +108,51 @@ tooltip label{
   border-radius: 10px;
 }
 
+#bluetooth {
+  font-size: 18px;
+  border-radius: 10px 0px 0px 10px;
+  padding: 10px 10px 10px 20px;
+}
+#network {
+  border-radius: 0px 10px 10px 0px;
+  margin-right: 20px;
+  font-size: 18px;
+  padding: 10px 20px 10px 10px;
+}
+
+#bluetooth.on {
+	animation-name: blink-update;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+#bluetooth.off {
+  color: #6c6c74;
+}
+#bluetooth.connected {
+  color: #ffffff;
+}
+#network.linked{
+  color: #ffffff;
+}
+#network.diconnected {
+  color: #6c6c74;
+}
+
+
 #backlight {
   margin-right: 20px;
 }
 
 #pulseaudio {
   margin-right: 10px;
+}
+
+#idle_inhibitor {
+  margin-right: 10px;
+  padding: 10px 24px 10px 20px;
+  border-radius: 10px;
 }
 
 @keyframes blink-update {
