@@ -11,8 +11,8 @@ type="wave" # simple | wipe | any | grow
 duration=3
 swww_opt="--transition-bezier $bezier --transition-fps $fps --transition-type $type --transition-duration $duration"
 
-if pidof swaybg; then
-  pkill swaybg
+if pidof rofi; then
+  pkill rofi
 fi
 
 astyle() {
@@ -31,6 +31,6 @@ swww img $(xdg-user-dir PICTURES)/Wallpaper/$selected $swww_opt
 bstyle
 # astyle
 
-if pidof swaybg; then
-  pkill swaybg
+if pidof rofi; then
+  pkill rofi
 fi

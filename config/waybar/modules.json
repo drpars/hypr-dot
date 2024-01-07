@@ -111,7 +111,7 @@
     //shows the current power profile and switches to next on click
     "exec": "~/.config/scripts/waybar/power_profile",
     "return-type": "json",
-    "interval": 20,
+    "interval": 1,
     "format": "{}",
     "on-click": "~/.config/scripts/waybar/power_profile next",
     "signal": 8

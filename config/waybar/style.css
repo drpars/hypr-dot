@@ -1,8 +1,8 @@
 * {
   font-family: "Jet Brains Mono Nerd Font";
   font-weight: bold;
-  /* font-size: 14px; */
-  min-height: 30px;
+  font-size: 14px;
+  /* min-height: 30px; */
 }
 
 window#waybar {
@@ -91,8 +91,10 @@ tooltip label {
   margin-left: 20px;
   border-radius: 10px;
   padding: 10px 20px 10px 20px;
-  font-size: 12px;
-  font-weight: bold;
+  font-family: "Jet Brains Mono Nerd Font Italic";
+  font-style: italic;
+  font-weight: normal;
+  font-size: 13px;
 }
 
 #workspaces button.active {
