@@ -1,6 +1,7 @@
 * {
-  font-family: "Jet Brains Mono Nerd Font";
-  font-weight: bold;
+  font-family: "JetBrainsMono Nerd Font";
+  font-style: normal;
+  /* font-weight: bold; */
   font-size: 14px;
   /* min-height: 30px; */
 }
@@ -51,11 +52,12 @@ tooltip label {
 #backlight,
 #wireplumber,
 #pulseaudio,
+#custom-weather,
 #idle_inhibitor {
   background: #1e1e2e;
   opacity: 0.8;
   padding: 0px 10px;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 #custom-launch_rofi {
@@ -67,7 +69,7 @@ tooltip label {
 }
 
 #workspaces {
-  margin-right: 20px;
+  margin-right: 10px;
   border-radius: 0px 10px 10px 0px;
 }
 
@@ -88,7 +90,7 @@ tooltip label {
 }
 
 #window {
-  margin-left: 20px;
+  margin-left: 10px;
   border-radius: 10px;
   padding: 10px 20px 10px 20px;
   font-family: "Jet Brains Mono Nerd Font Italic";
@@ -107,12 +109,12 @@ tooltip label {
 }
 
 #tray {
+  margin-right: 10px;
   border-radius: 10px;
 }
 
 #custom-power_profile {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-right: 10px;
   padding: 10px 24px 10px 20px;
   border-radius: 10px;
 }
@@ -124,7 +126,7 @@ tooltip label {
 }
 #network {
   border-radius: 0px 10px 10px 0px;
-  margin-right: 20px;
+  margin-right: 10px;
   font-size: 18px;
   padding: 10px 20px 10px 10px;
 }
@@ -150,11 +152,19 @@ tooltip label {
 }
 
 #backlight {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 #pulseaudio {
   margin-right: 10px;
+}
+
+#custom-weather {
+  font-family: "DroidSansM Nerd Font Mono Bold";
+  font-weight: bold;
+  margin-right: 10px;
+  padding: 10px 24px 10px 20px;
+  border-radius: 10px;
 }
 
 #idle_inhibitor {

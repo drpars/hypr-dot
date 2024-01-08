@@ -5,6 +5,14 @@
     "tooltip": false
   },
 
+  "custom/weather": {
+    "exec": "~/.config/scripts/waybar/get_weather Çankırı",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600
+  },
+
   "hyprland/workspaces": {
     "format": "{icon}",
     "all-outputs": true,
@@ -108,7 +116,6 @@
   },
 
   "custom/power_profile": {
-    //shows the current power profile and switches to next on click
     "exec": "~/.config/scripts/waybar/power_profile",
     "return-type": "json",
     "interval": 1,
@@ -118,10 +125,9 @@
   },
 
   "bluetooth": {
+    "interval": 1,
     "format": "",
     "format-connected": "",
-    // "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
@@ -133,7 +139,7 @@
     "format": "{ifname}",
     "format-wifi": " ",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗 ",
-    "format-disconnected": " ", //An empty format will hide the module.
+    "format-disconnected": " ",
     "tooltip-format": "{ifname} via {gwaddr} 󰊗 ",
     "tooltip-format-wifi": "{ifname}\n\n{essid}\t({signalStrength}%)\t{ipaddr}\nDown: {bandwidthDownBits}\tUp: {bandwidthUpBits}",
     "tooltip-format-ethernet": "{ifname}  ",
@@ -143,12 +149,9 @@
 
   "temperature": {
     "interval": 1,
-    // "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
-    // "input-filename": "temp1_input",
     "format": " {temperatureC}°C",
     "critical-threshold": 70,
     "format-critical": " {temperatureC}°C"
-    // "on-click": "kitty --title btop sh -c 'btop'"
   },
 
   "battery": {
@@ -180,7 +183,6 @@
     "on-scroll-up": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+",
     "on-scroll-down": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-",
     "max-volume": 100,
-    //"format-icons": ["", "", ""]
     "format-icons": {
       "headphone": "",
       "hands-free": "",

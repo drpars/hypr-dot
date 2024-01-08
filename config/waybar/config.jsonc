@@ -33,6 +33,7 @@
     "backlight",
     "wireplumber",
     "pulseaudio#microphone",
+    "custom/weather",
     "idle_inhibitor"
   ]
 }
