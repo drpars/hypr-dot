@@ -1,5 +1,11 @@
 [Added Associations]
+application/x-desktop=nvim.desktop;
+application/x-shellscript=nvim.desktop;
 inode/directory=org.kde.dolphin.desktop;
+text/x-csrc=nvim.desktop;
 
 [Default Applications]
-inode/directory=org.kde.dolphin.desktop;
+application/x-desktop=nvim.desktop;
+application/x-shellscript=nvim.desktop;
+inode/directory=org.kde.dolphin.desktop
+text/x-csrc=nvim.desktop;

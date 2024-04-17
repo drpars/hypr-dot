@@ -20,7 +20,7 @@ export PATH="$PATH:$HOME/.local/bin"
 alias v=nvim
 alias sv='sudo nvim'
 alias update='sudo pacman -Syu --noconfirm'
-alias full-update='yay'
+alias full-update='yay --devel'
 alias ssh_clear='rm ~/.ssh/known_hosts'
 alias ls='eza -a --icons --group-directories-first'
 alias ll='exa -al --color=always --icons --group-directories-first'

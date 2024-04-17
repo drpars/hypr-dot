@@ -29,6 +29,7 @@
     "bluetooth",
     "network",
     "temperature",
+    "custom/gputemp",
     "battery",
     "backlight",
     "wireplumber",

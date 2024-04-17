@@ -36,7 +36,7 @@
     "format": " {}%",
     "max-length": 10,
     "tooltip": true,
-    "tooltip-format": "Memory - {used:0.1f}GB used"
+    "tooltip-format": "RAM - {used:0.1f}GB kullanılıyor"
   },
 
   "disk": {
@@ -44,7 +44,7 @@
     "format": "󰋊 {percentage_used}%",
     "path": "/home",
     "tooltip": true,
-    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)"
+    "tooltip-format": "HDD - {path} üzerinde {total} alandan {used} alan kullanılıyor ({percentage_used}%)"
   },
 
   "hyprland/window": {
@@ -149,9 +149,16 @@
 
   "temperature": {
     "interval": 1,
-    "format": " {temperatureC}°C",
+    "format": " CPU: {temperatureC}°C",
     "critical-threshold": 70,
     "format-critical": " {temperatureC}°C"
+  },
+
+  "custom/gputemp": {
+  "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits", 
+  "format": "GPU: {}°C",
+  "return-type": "",
+  "interval": 1
   },
 
   "battery": {
