@@ -19,6 +19,7 @@ export PATH="$PATH:$HOME/.local/bin"
 # alias
 alias v=nvim
 alias sv='sudo nvim'
+alias install='sudo pacman -S --needed'
 alias update='sudo pacman -Syu --noconfirm'
 alias full-update='yay --devel'
 alias ssh_clear='rm ~/.ssh/known_hosts'
@@ -30,4 +31,6 @@ alias share='net usershare add'
 alias unshare='net usershare remove'
 alias sharelist='net usershare info'
 alias shutdown='systemctl poweroff'
+alias apkinstall='waydroid app install'
+alias apkremove='waydroid app remove'
 # neofetch
