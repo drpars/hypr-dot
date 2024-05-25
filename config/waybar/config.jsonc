@@ -11,9 +11,10 @@
   "modules-left": [
     "custom/launch_rofi",
     "hyprland/workspaces",
-    "cpu",
-    "memory",
-    "disk",
+    "group/hardware",
+    // "cpu",
+    // "memory",
+    // "disk",
     "hyprland/window"
   ],
   "modules-center": [
@@ -28,8 +29,7 @@
     "custom/power_profile",
     "bluetooth",
     "network",
-    "temperature",
-    "custom/gputemp",
+    "group/temp",
     "battery",
     "backlight",
     "wireplumber",

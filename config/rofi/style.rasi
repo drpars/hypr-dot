@@ -11,10 +11,10 @@
 configuration {
 	modi:                       "drun,run,filebrowser,window";
     show-icons:                 true;
-    display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "";
-    display-window:             "";
+    display-drun:               " ";
+    display-run:                " ";
+    display-filebrowser:        " ";
+    display-window:             " ";
 	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
 }
@@ -83,9 +83,9 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     5px;
     margin:                      0px;
-    padding:                     30px;
+    padding:                     5px;
     border:                      1px solid;
     border-radius:               10px;
     border-color:                #ffe9a0;
@@ -97,11 +97,11 @@ mainbox {
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    margin:                      0px;
-    padding:                     0px;
+    margin:                      5px;
+    padding:                     20px;
     border:                      0px solid;
-    border-radius:               0px;
-    border-color:                @border-colour;
+    border-radius:               10px;
+    border-color:                #ffe9a0;
     background-color:            transparent;
     text-color:                  @foreground-colour;
     children:                    [ "textbox-prompt-colon", "entry", "mode-switcher" ];
@@ -114,19 +114,19 @@ prompt {
 }
 textbox-prompt-colon {
     enabled:                     true;
-    padding:                     5px 0px;
+    padding:                     10px;
     expand:                      false;
-    str:                         "";
+    str:                         " ";
     background-color:            inherit;
     text-color:                  inherit;
 }
 entry {
     enabled:                     true;
-    padding:                     5px 0px;
+    padding:                     12px;
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Ara ...";
+    placeholder:                 "";
     placeholder-color:           inherit;
 }
 num-filtered-rows {

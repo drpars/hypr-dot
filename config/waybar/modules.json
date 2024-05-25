@@ -25,6 +25,20 @@
     }
   },
 
+  "group/hardware": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": true
+    },
+    "modules": ["custom/hardware","cpu", "memory", "disk"]
+  },
+
+  "custom/hardware": {
+    "format": "󰭵",
+  },
+
   "cpu": {
     "interval": 10,
     "format": "  {usage}%",
@@ -147,6 +161,19 @@
     "max-length": 50
   },
 
+  "group/temp": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false
+    },
+    "modules": ["custom/temp", "temperature", "custom/gputemp"]
+  },
+
+  "custom/temp": {
+    "format": ""
+  },
   "temperature": {
     "interval": 1,
     "format": "CPU {temperatureC}°C",
@@ -155,10 +182,10 @@
   },
 
   "custom/gputemp": {
-  "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits", 
-  "format": "GPU {}°C",
-  "return-type": "",
-  "interval": 1
+    "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
+    "format": "GPU {}°C",
+    "return-type": "",
+    "interval": 1
   },
 
   "battery": {
