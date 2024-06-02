@@ -30,9 +30,8 @@ configuration {
 	drun-display-format : "{name}";
   display-filebrowser : " ";
   display-window      : " ";
-	window-format       : "{w} · {c} · {t}";
   filebrowser {
-     directory          : "$USER";
+     directory          : "/home/drpars/";
      directories-first  : true;
      sorting-method     : "name";
      show-hidden        : true;
@@ -70,7 +69,6 @@ inputbar {
   border-color     : @accent;
   border-radius    : 2px;
   background-color : transparent;
-  children         : [ "textbox", "entry" ];
 }
 
 icon-search, entry, element-icon, element-text {
@@ -78,12 +76,15 @@ icon-search, entry, element-icon, element-text {
 }
 
 icon-search {
-  expand   : false;
-  filename : "search-symbolic";
-  size     : 24px;
+  expand            : false;
+  filename          : "arch_linux";
+  size              : 24px;
+  background-color  : transparent;
 }
 
 entry {
+  padding           : 10px;
+  horizontal-align  : 0.45;
   placeholder       : "";
   placeholder-color : @txt2;
   text-color        : @txt;
@@ -92,7 +93,6 @@ entry {
 
 textbox {
   padding          : 10px;
-  str              : " ";
   background-color : transparent;
   text-color       : @txt;
 }

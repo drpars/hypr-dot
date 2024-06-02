@@ -1,7 +1,7 @@
 {
   "custom/launch_rofi": {
     "format": "",
-    "on-click": "~/.config/scripts/waybar/launcher.sh",
+    "on-click": "rofi -show drun -theme $HOME/.config/rofi/launcher.rasi",
     "tooltip": false
   },
 
@@ -32,11 +32,12 @@
       "children-class": "not-power",
       "transition-left-to-right": true
     },
-    "modules": ["custom/hardware","cpu", "memory", "disk"]
+    "modules": ["custom/hardware", "cpu", "memory", "disk"]
   },
 
   "custom/hardware": {
     "format": "󰭵",
+    "on-click-right": "kitty --title btop sh -c 'btop'"
   },
 
   "cpu": {
@@ -55,10 +56,41 @@
 
   "disk": {
     "interval": 30,
-    "format": "󰋊 {percentage_used}%",
+    "format": "󰋊  {percentage_used}%",
     "path": "/home",
     "tooltip": true,
     "tooltip-format": "HDD - {path} üzerinde {total} alandan {used} alan kullanılıyor ({percentage_used}%)"
+  },
+
+  "group/temp": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": true
+    },
+    "modules": ["custom/temp", "temperature", "custom/gputemp"]
+  },
+
+  "custom/temp": {
+    "format": ""
+  },
+
+  "temperature": {
+    "interval": 1,
+    "format": "CPU {temperatureC}°C",
+    "critical-threshold": 70,
+    "format-critical": "CPU {temperatureC}°C",
+    "tooltip-format": "CPU {temperatureC}°C",
+    "on-click-right": "kitty --title btop sh -c 'btop'"
+  },
+
+  "custom/gputemp": {
+    "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
+    "format": "GPU {}°C",
+    "return-type": "",
+    "interval": 1,
+    "on-click-right": "kitty --title nvtop sh -c 'nvtop'"
   },
 
   "hyprland/window": {
@@ -76,7 +108,7 @@
     "format": "{icon}{}",
     "return-type": "json",
     "format-icons": {
-      "pending-updates": " ",
+      "pending-updates": "",
       "updated": ""
     },
     "exec-if": "which waybar-updates",
@@ -85,14 +117,17 @@
 
   "clock": {
     "format": "{:%H:%M}  ",
-    "format-alt": "{:%A, %B %d, %Y (%R)}  ",
-    "tooltip-format": "<tt><big>{calendar}</big></tt>",
+    "format-alt": "{:L%A, %B %d, %Y (%R)}  ",
+    "timezones": [
+      "Etc/UTC",
+      "Europa/Istanbul"
+    ],
+    "tooltip-format": "\n<span size='9pt' font='JetBrainsMono Nerd Font Mono'>{calendar}</span>",
     "calendar": {
-      "mode": "month",
-      "mode-mon-col": 2,
+      "mode": "year",
+      "mode-mon-col": 3,
       "weeks-pos": "right",
       "on-scroll": 1,
-      "on-click-right": "mode",
       "format": {
         "months": "<span color='#ffead3'><b>{}</b></span>",
         "days": "<span color='#ecc6d9'><b>{}</b></span>",
@@ -111,7 +146,7 @@
   },
 
   "custom/wallpaper": {
-    "format": " ",
+    "format": "",
     "on-click": "~/.config/scripts/waybar/wallselect",
     "on-click-right": "~/.config/scripts/waybar/randomwallpaper",
     "tooltip": true,
@@ -130,11 +165,12 @@
   },
 
   "custom/power_profile": {
-    "exec": "~/.config/scripts/waybar/power_profile",
+    "exec": "~/.config/scripts/waybar/powerprofile",
     "return-type": "json",
     "interval": 1,
     "format": "{}",
-    "on-click": "~/.config/scripts/waybar/power_profile next",
+    "on-click": "~/.config/scripts/waybar/powerprofile next",
+    "on-click-right": "rog-control-center",
     "signal": 8
   },
 
@@ -151,91 +187,64 @@
   "network": {
     "interval": 1,
     "format": "{ifname}",
-    "format-wifi": " ",
-    "format-ethernet": "{ipaddr}/{cidr} 󰊗 ",
-    "format-disconnected": " ",
-    "tooltip-format": "{ifname} via {gwaddr} 󰊗 ",
+    "format-wifi": "",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "format-disconnected": "",
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{ifname}\n\n{essid}\t({signalStrength}%)\t{ipaddr}\nDown: {bandwidthDownBits}\tUp: {bandwidthUpBits}",
-    "tooltip-format-ethernet": "{ifname}  ",
+    "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50
   },
 
-  "group/temp": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 500,
-      "children-class": "not-power",
-      "transition-left-to-right": false
-    },
-    "modules": ["custom/temp", "temperature", "custom/gputemp"]
-  },
-
-  "custom/temp": {
-    "format": ""
-  },
-  "temperature": {
-    "interval": 1,
-    "format": "CPU {temperatureC}°C",
-    "critical-threshold": 70,
-    "format-critical": "CPU {temperatureC}°C"
-  },
-
-  "custom/gputemp": {
-    "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
-    "format": "GPU {}°C",
-    "return-type": "",
-    "interval": 1
-  },
-
   "battery": {
     "states": {
-      "good": 95,
+      "good": 70,
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format": "{icon}",
     "format-alt": "{time} {icon}",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "full-at": 100,
+    "format-full": "{icon} Full",
+    "format-charging": "",
+    "format-plugged": "",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip": true,
+    "tooltip-format": "{capacity}%"
   },
 
   "backlight": {
     "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "format-icons": ["󰃞 ", "󰃟 ", "󰃠 "],
-    "on-scroll-up": "brightnessctl set 10%+",
-    "on-scroll-down": "brightnessctl set 10%-",
-    "min-length": 6
+    "format": "{icon}",
+    "format-alt": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "on-scroll-up": "$HOME/.config/scripts/waybar/brightness up",
+    "on-scroll-down": "$HOME/.config/scripts/waybar/brightness down",
+    "tooltip-format": "{percent}%"
   },
 
   "wireplumber": {
-    "format": "{icon} {volume}%",
-    "format-muted": " ",
-    "on-click": "pavucontrol",
-    "on-scroll-up": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+",
-    "on-scroll-down": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-",
+    "format": "{icon}",
+    "format-muted": "",
+    "on-click": "$HOME/.config/scripts/waybar/volume togglevol",
+    "on-click-right": "pavucontrol",
     "max-volume": 100,
-    "format-icons": {
-      "headphone": " ",
-      "hands-free": " ",
-      "headset": " ",
-      "phone": " ",
-      "portable": " ",
-      "car": " ",
-      "default": [" ", " ", "  "]
-    }
+    "on-scroll-up": "$HOME/.config/scripts/waybar/volume upvol",
+    "on-scroll-down": "$HOME/.config/scripts/waybar/volume downvol",
+    "format-icons": ["", "", ""],
+    "tooltip-format": "{volume}%"
   },
 
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": " {volume}%",
+    "format-source": "",
     "format-source-muted": "",
-    "on-click": "pavucontrol",
-    "on-scroll-up": "pamixer --default-source -i 5",
-    "on-scroll-down": "pamixer --default-source -d 5",
-    "scroll-step": 5
+    "on-click": "$HOME/.config/scripts/waybar/volume togglemic",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "$HOME/.config/scripts/waybar/volume upmic",
+    "on-scroll-down": "$HOME/.config/scripts/waybar/volume downmic",
+    "tooltip-format": "{source_volume}%"
   },
 
   "idle_inhibitor": {

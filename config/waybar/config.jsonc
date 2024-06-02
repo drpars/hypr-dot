@@ -12,6 +12,7 @@
     "custom/launch_rofi",
     "hyprland/workspaces",
     "group/hardware",
+    "group/temp",
     // "cpu",
     // "memory",
     // "disk",
@@ -29,11 +30,10 @@
     "custom/power_profile",
     "bluetooth",
     "network",
-    "group/temp",
-    "battery",
-    "backlight",
     "wireplumber",
     "pulseaudio#microphone",
+    "battery",
+    "backlight",
     "custom/weather",
     "idle_inhibitor"
   ]

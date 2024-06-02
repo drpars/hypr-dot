@@ -3,7 +3,7 @@
   /* font-style: normal; */
   font-weight: bold;
   font-size: 14px;
-  min-height: 28px;
+  min-height: 34px;
 }
 
 window#waybar {
@@ -20,7 +20,7 @@ tooltip {
   background: #1e1e2e;
   opacity: 0.95;
   border-radius: 10px;
-  border-width: 2px;
+  border-width: 0px;
   border-style: solid;
   border-color: #11111b;
 }
@@ -45,12 +45,12 @@ tooltip label {
 #custom-power_btn,
 /* module right */
 #tray,
-#custom-temp,
-#custom-gputemp,
-#temperature,
 #custom-power_profile,
 #bluetooth,
 #network,
+#custom-temp,
+#temperature,
+#custom-gputemp,
 #battery,
 #backlight,
 #wireplumber,
@@ -59,102 +59,122 @@ tooltip label {
 #idle_inhibitor {
   background: #1e1e2e;
   opacity: 0.8;
-  padding: 0px 10px;
   margin-top: 8px;
 }
 
+/* module left */
 #custom-launch_rofi {
+  font-size: 20px;
   margin-left: 10px;
-  padding: 10px 10px 10px 20px;
+  padding: 0px 10px 0px 20px;
   border-radius: 10px 0px 0px 10px;
   color: #ffffff;
-  font-size: 18px;
 }
 
 #workspaces {
   margin-right: 10px;
   border-radius: 0px 10px 10px 0px;
+  padding: 0px 10px 0px 10px;
 }
-
-#custom-hardware {
-  padding: 10px 20px 10px 20px;
-  border-radius: 10px;
-}
-
-#cpu {
-  margin-left: 10px;
-}
-
-#cpu,
-#custom-lock_screen,
-#custom-temp,
-#temperature,
-#wireplumber {
-  border-radius: 10px 0px 0px 10px;
-  padding: 10px 10px 10px 20px;
-}
-
-#custom-gputemp {
-  margin-right: 10px;
-  border-radius: 0px 10px 10px 0px;
-  padding: 10px 20px 10px 10px;
-}
-
-#temperature,
-#custom-gputemp {
-  font-size: 13px;
-}
-
-#disk,
-#custom-power_btn,
-#backlight,
-#pulseaudio {
-  border-radius: 0px 10px 10px 0px;
-  padding: 10px 20px 10px 10px;
-}
-
-#window {
-  margin-left: 10px;
-  border-radius: 10px;
-  padding: 10px 20px 10px 20px;
-  font-family: "JetBrainsMono Nerd Font Bold Italic";
-  font-style: italic;
-  font-weight: bold;
-  font-size: 13px;
-}
-
 #workspaces button.active {
   color: #ffffff;
 }
-
 #workspaces button:hover {
   background: #11111b;
   color: #ebeefa;
 }
 
+#custom-hardware {
+  padding: 0px 20px 0px 20px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+#cpu {
+  border-radius: 10px 0px 0px 10px;
+  padding: 0px 10px 0px 20px;
+}
+#memory {
+  padding: 0px 10px 0px 10px;
+}
+#disk {
+  border-radius: 0px 10px 10px 0px;
+  padding: 0px 20px 0px 10px;
+  margin-right: 10px;
+}
+
+#custom-temp {
+  margin-right: 10px;
+  border-radius: 10px;
+  padding: 0px 20px 0px 20px;
+}
+#temperature {
+  border-radius: 10px 0px 0px 10px;
+  padding: 0px 10px 0px 20px;
+  font-size: 12px;
+}
+#custom-gputemp {
+  margin-right: 10px;
+  border-radius: 0px 10px 10px 0px;
+  padding: 0px 20px 0px 10px;
+  font-size: 12px;
+}
+
+#window {
+  font-family: "JetBrainsMono Nerd Font Bold Italic";
+  font-style: italic;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 10px;
+  padding: 0px 20px 0px 20px;
+}
+
+/* module center */
+#custom-lock_screen {
+  border-radius: 10px 0px 0px 10px;
+  padding: 0px 10px 0px 20px;
+}
+#custom-pacman {
+  font-size: 16px;
+  padding: 0px 10px 0px 10px;
+}
+#custom-pacman {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#custom-pacman.pending-updates {
+  animation-name: blink-update;
+  animation-duration: 3s;
+}
+#clock {
+  padding: 0px 10px 0px 10px;
+}
+#custom-wallpaper {
+  padding: 0px 10px 0px 10px;
+}
+#custom-power_btn {
+  border-radius: 0px 10px 10px 0px;
+  padding: 0px 20px 0px 10px;
+}
+
+/* module right */
 #tray {
   margin-right: 10px;
   border-radius: 10px;
+  padding: 0px 20px 0px 20px;
 }
 
 #custom-power_profile {
   margin-right: 10px;
-  padding: 10px 24px 10px 20px;
   border-radius: 10px;
+  padding: 0px 20px 0px 20px;
 }
 
 #bluetooth {
-  font-size: 18px;
+  /* font-size: 14px; */
   border-radius: 10px 0px 0px 10px;
-  padding: 10px 10px 10px 20px;
+  padding: 0px 10px 0px 20px;
 }
-#network {
-  border-radius: 0px 10px 10px 0px;
-  margin-right: 10px;
-  font-size: 18px;
-  padding: 10px 20px 10px 10px;
-}
-
 #bluetooth.on {
   animation-name: blink-update;
   animation-duration: 3s;
@@ -168,6 +188,12 @@ tooltip label {
 #bluetooth.connected {
   color: #ffffff;
 }
+#network {
+  margin-right: 10px;
+  border-radius: 0px 10px 10px 0px;
+  /* font-size: 18px; */
+  padding: 0px 20px 0px 10px;
+}
 #network.linked {
   color: #ffffff;
 }
@@ -175,26 +201,46 @@ tooltip label {
   color: #6c6c74;
 }
 
+#wireplumber {
+  border-radius: 10px 0px 0px 10px;
+  padding: 0px 10px 0px 20px;
+}
+#pulseaudio {
+  padding: 0px 10px 0px 10px;
+}
+#battery {
+  padding: 0px 10px 0px 10px;
+}
+#battery.warning {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: blink-update;
+  animation-duration: 3s;
+}
+#battery.critical {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: blink-battery;
+  animation-duration: 3s;
+}
 #backlight {
   margin-right: 10px;
-}
-
-#pulseaudio {
-  margin-right: 10px;
+  border-radius: 0px 10px 10px 0px;
+  padding: 0px 20px 0px 8px;
 }
 
 #custom-weather {
-  font-family: "Segoe UI Bold";
-  font-weight: bold;
   margin-right: 10px;
-  padding: 10px 24px 10px 20px;
   border-radius: 10px;
+  padding: 0px 20px 0px 20px;
 }
 
 #idle_inhibitor {
   margin-right: 10px;
-  padding: 10px 24px 10px 20px;
   border-radius: 10px;
+  padding: 0px 25px 0px 20px;
 }
 
 @keyframes blink-update {
@@ -202,13 +248,8 @@ tooltip label {
     background-color: dodgerblue;
   }
 }
-
-#custom-pacman {
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-#custom-pacman.pending-updates {
-  animation-name: blink-update;
-  animation-duration: 3s;
+@keyframes blink-battery {
+  to {
+    background-color: red;
+  }
 }

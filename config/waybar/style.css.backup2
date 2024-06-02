@@ -1,0 +1,215 @@
+
+* {
+  font-family: "JetBrainsMono Nerd Font Mono ExtraBold";
+  /* font-style: normal; */
+  font-weight: bold;
+  font-size: 14px;
+  min-height: 28px;
+}
+
+window#waybar {
+  background: rgba(21, 18, 27, 0);
+  color: #cdd6f4;
+  /* color: @theme_text_color; */
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+tooltip {
+  background: #1e1e2e;
+  opacity: 0.95;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #11111b;
+}
+
+tooltip label {
+  color: #cdd6f4;
+}
+
+/* module left */
+#custom-launch_rofi,
+#workspaces,
+#custom-hardware,
+#cpu,
+#memory,
+#disk,
+#window,
+/* module center */
+#custom-lock_screen,
+#custom-pacman,
+#clock,
+#custom-wallpaper,
+#custom-power_btn,
+/* module right */
+#tray,
+#custom-temp,
+#custom-gputemp,
+#temperature,
+#custom-power_profile,
+#bluetooth,
+#network,
+#battery,
+#backlight,
+#wireplumber,
+#pulseaudio,
+#custom-weather,
+#idle_inhibitor {
+  background: #1e1e2e;
+  opacity: 0.8;
+  padding: 0px 10px;
+  margin-top: 8px;
+}
+
+#custom-launch_rofi {
+  margin-left: 10px;
+  padding: 10px 10px 10px 20px;
+  border-radius: 10px 0px 0px 10px;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+#workspaces {
+  margin-right: 10px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+#custom-hardware {
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+}
+
+#cpu {
+  margin-left: 10px;
+}
+
+#cpu,
+#custom-lock_screen,
+#custom-temp,
+#temperature,
+#wireplumber {
+  border-radius: 10px 0px 0px 10px;
+  padding: 10px 10px 10px 20px;
+}
+
+#custom-gputemp {
+  margin-right: 10px;
+  border-radius: 0px 10px 10px 0px;
+  padding: 10px 20px 10px 10px;
+}
+
+#temperature,
+#custom-gputemp {
+  font-size: 13px;
+}
+
+#disk,
+#custom-power_btn,
+#backlight,
+#pulseaudio {
+  border-radius: 0px 10px 10px 0px;
+  padding: 10px 20px 10px 10px;
+}
+
+#window {
+  margin-left: 10px;
+  border-radius: 10px;
+  padding: 10px 20px 10px 20px;
+  font-family: "JetBrainsMono Nerd Font Bold Italic";
+  font-style: italic;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+#workspaces button.active {
+  color: #ffffff;
+}
+
+#workspaces button:hover {
+  background: #11111b;
+  color: #ebeefa;
+}
+
+#tray {
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+#custom-power_profile {
+  margin-right: 10px;
+  padding: 10px 24px 10px 20px;
+  border-radius: 10px;
+}
+
+#bluetooth {
+  font-size: 18px;
+  border-radius: 10px 0px 0px 10px;
+  padding: 10px 10px 10px 20px;
+}
+#network {
+  border-radius: 0px 10px 10px 0px;
+  margin-right: 10px;
+  font-size: 18px;
+  padding: 10px 20px 10px 10px;
+}
+
+#bluetooth.on {
+  animation-name: blink-update;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#bluetooth.off {
+  color: #6c6c74;
+}
+#bluetooth.connected {
+  color: #ffffff;
+}
+#network.linked {
+  color: #ffffff;
+}
+#network.diconnected {
+  color: #6c6c74;
+}
+
+#backlight {
+  margin-right: 10px;
+}
+
+#pulseaudio {
+  margin-right: 10px;
+}
+
+#custom-weather {
+  font-family: "Segoe UI Bold";
+  font-weight: bold;
+  margin-right: 10px;
+  padding: 10px 24px 10px 20px;
+  border-radius: 10px;
+}
+
+#idle_inhibitor {
+  margin-right: 10px;
+  padding: 10px 24px 10px 20px;
+  border-radius: 10px;
+}
+
+@keyframes blink-update {
+  to {
+    background-color: dodgerblue;
+  }
+}
+
+#custom-pacman {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#custom-pacman.pending-updates {
+  animation-name: blink-update;
+  animation-duration: 3s;
+}
