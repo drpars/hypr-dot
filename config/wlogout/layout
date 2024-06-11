@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "sleep 0.3s; swaylock -c ~/.config/swaylock/config --grace-no-touch --grace-no-mouse",
+    "action" : "pidof hyprlock || hyprlock",
     "text" : "Kilitle",
     "keybind" : "l"
 }
@@ -24,7 +24,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "swaylock -f && systemctl suspend",
+    "action" : "systemctl suspend",
     "text" : "Askıya al",
     "keybind" : "u"
 }

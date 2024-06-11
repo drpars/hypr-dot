@@ -56,7 +56,7 @@
 
   "disk": {
     "interval": 30,
-    "format": "󰋊  {percentage_used}%",
+    "format": "󰋊 {percentage_used}%",
     "path": "/home",
     "tooltip": true,
     "tooltip-format": "HDD - {path} üzerinde {total} alandan {used} alan kullanılıyor ({percentage_used}%)"
@@ -81,6 +81,7 @@
     "format": "CPU {temperatureC}°C",
     "critical-threshold": 70,
     "format-critical": "CPU {temperatureC}°C",
+    "tooltip": false,
     "tooltip-format": "CPU {temperatureC}°C",
     "on-click-right": "kitty --title btop sh -c 'btop'"
   },
@@ -90,6 +91,7 @@
     "format": "GPU {}°C",
     "return-type": "",
     "interval": 1,
+    "tooltip": false,
     "on-click-right": "kitty --title nvtop sh -c 'nvtop'"
   },
 
@@ -100,8 +102,10 @@
 
   "custom/lock_screen": {
     "format": "",
-    "on-click": "swaylock",
-    "tooltip": false
+    "return-type": "",
+    "on-click": "pidof hyprlock || hyprlock",
+    "tooltip": true,
+    "tooltip-format": "<span size='10pt' font='Ubuntu Nerd Font Bold'>Kilitle</span>"
   },
 
   "custom/pacman": {
@@ -116,13 +120,10 @@
   },
 
   "clock": {
-    "format": "{:%H:%M}  ",
-    "format-alt": "{:L%A, %B %d, %Y (%R)}  ",
-    "timezones": [
-      "Etc/UTC",
-      "Europa/Istanbul"
-    ],
-    "tooltip-format": "\n<span size='9pt' font='JetBrainsMono Nerd Font Mono'>{calendar}</span>",
+    "format": "{:%H:%M} ",
+    "format-alt": "{:L%A, %B %d, %Y (%R)} ",
+    "timezones": ["Europa/Istanbul"],
+    "tooltip-format": "<span size='9pt' font='JetBrainsMono Nerd Font Mono'>{calendar}</span>",
     "calendar": {
       "mode": "year",
       "mode-mon-col": 3,
@@ -150,13 +151,15 @@
     "on-click": "~/.config/scripts/waybar/wallselect",
     "on-click-right": "~/.config/scripts/waybar/randomwallpaper",
     "tooltip": true,
-    "tooltip-format": "Duvarkağıdını Değiştir"
+    "tooltip-format": "<span size='10pt' font='Ubuntu Nerd Font Bold'>Duvarkağıdını değiştir</span>"
   },
 
   "custom/power_btn": {
     "format": "",
+    "return-type": "",
     "on-click": "wlogout",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "<span size='10pt' font='Ubuntu Nerd Font Bold'>Kapat</span>"
   },
 
   "tray": {
@@ -172,6 +175,18 @@
     "on-click": "~/.config/scripts/waybar/powerprofile next",
     "on-click-right": "rog-control-center",
     "signal": 8
+  },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
   },
 
   "bluetooth": {
@@ -217,7 +232,7 @@
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon}",
-    "format-alt": "{icon} {percent}%",
+    // "format-alt": "{icon} {percent}%",
     "format-icons": ["󰃞", "󰃟", "󰃠"],
     "on-scroll-up": "$HOME/.config/scripts/waybar/brightness up",
     "on-scroll-down": "$HOME/.config/scripts/waybar/brightness down",
@@ -245,6 +260,17 @@
     "on-scroll-up": "$HOME/.config/scripts/waybar/volume upmic",
     "on-scroll-down": "$HOME/.config/scripts/waybar/volume downmic",
     "tooltip-format": "{source_volume}%"
+  },
+
+  "custom/hypridle": {
+    "format": "",
+    "format-alt": "",
+    "return-type": "json",
+    "escape": true,
+    "exec-on-event": true,
+    "interval": 60,
+    "exec": "$HOME/.config/scripts/waybar/hypr_idle status",
+    "on-click": "$HOME/.config/scripts/waybar/hypr_idle toggle"
   },
 
   "idle_inhibitor": {

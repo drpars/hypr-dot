@@ -143,5 +143,5 @@ select_flags=6
 [Panelize]
 Yamadan sonraki reddedilenleri bul=find . -name \\*.rej -print
 Yamadan sonraki .orig dosyalarını bul=find . -name \\*.orig -print
-Değiştirilmiş git dosyaları=git ls-files --modified
 SUID ve SGID uygulamaları bul=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
+Değiştirilmiş git dosyaları=git ls-files --modified

@@ -1,15 +1,16 @@
 * {
-  font-family: "JetBrainsMono Nerd Font Mono ExtraBold";
-  /* font-style: normal; */
+  font-family: "JetBrainsMono Nerd Font ExtraBold";
   font-weight: bold;
   font-size: 14px;
-  min-height: 34px;
+  /* min-height: 0; */
+  /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
+  /* font-size: 97%; */
+  /* font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"'; */
 }
 
 window#waybar {
-  background: rgba(21, 18, 27, 0);
-  color: #cdd6f4;
-  /* color: @theme_text_color; */
+  background: transparent;
+  color: #FFFFFF;
 }
 
 window#waybar.empty #window {
@@ -23,10 +24,12 @@ tooltip {
   border-width: 0px;
   border-style: solid;
   border-color: #11111b;
+  text-shadow: none;
 }
 
 tooltip label {
   color: #cdd6f4;
+  text-shadow: none;
 }
 
 /* module left */
@@ -46,6 +49,7 @@ tooltip label {
 /* module right */
 #tray,
 #custom-power_profile,
+#power-profiles-daemon,
 #bluetooth,
 #network,
 #custom-temp,
@@ -56,6 +60,7 @@ tooltip label {
 #wireplumber,
 #pulseaudio,
 #custom-weather,
+#custom-hypridle,
 #idle_inhibitor {
   background: #1e1e2e;
   opacity: 0.8;
@@ -164,6 +169,7 @@ tooltip label {
   padding: 0px 20px 0px 20px;
 }
 
+#power-profiles-daemon,
 #custom-power_profile {
   margin-right: 10px;
   border-radius: 10px;
@@ -225,6 +231,8 @@ tooltip label {
   animation-name: blink-battery;
   animation-duration: 3s;
 }
+#battery.charging {
+}
 #backlight {
   margin-right: 10px;
   border-radius: 0px 10px 10px 0px;
@@ -237,6 +245,7 @@ tooltip label {
   padding: 0px 20px 0px 20px;
 }
 
+#custom-hypridle,
 #idle_inhibitor {
   margin-right: 10px;
   border-radius: 10px;
