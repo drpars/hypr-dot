@@ -11,9 +11,8 @@ fi
 # paste güthub token --> token=
 # github repositories
 repo="
-arch-de-install
-dotfiles
-install-arch
+installarch
+installarchde
 "
 
 pars() {
