@@ -1,8 +1,8 @@
 * {
-  font-family: "JetBrainsMono Nerd Font ExtraBold";
+  font-family: "Ubuntu Nerd Font";
   font-weight: bold;
   font-size: 14px;
-  /* min-height: 0; */
+  min-height: 28px;
   /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
   /* font-size: 97%; */
   /* font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"'; */
@@ -82,6 +82,7 @@ tooltip label {
   padding: 0px 10px 0px 10px;
 }
 #workspaces button.active {
+  background: #11111b;
   color: #ffffff;
 }
 #workspaces button:hover {
