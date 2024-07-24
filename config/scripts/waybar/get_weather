@@ -4,6 +4,11 @@
 for i in {1..5}
 do
     text=$(curl -s "https://wttr.in/$1?format=1")
+    if (echo $text | grep -i "unknown" >/dev/null );then
+      text="$(whoami)"
+    else
+      text="$text"
+    fi
     if [[ $? == 0 ]]
     then
         text=$(echo "$text" | sed -E "s/\s+/ /g")

@@ -42,11 +42,3 @@ if [[ $clonerepos =~ ^[Yy]$ ]]; then
     fi
   done
 fi
-
-# nvim clone to .config and authorized
-read -rep "Do you want to install neovim dotfiles (y,n) " nvm
-if [[ $nvm =~ ^[Yy]$ ]]; then
-  git clone https://github.com/$user/nvim.git ~/.config/nvim
-  cd ~/.config/nvim
-  git remote set-url origin https://$user:$token@github.com/$user/nvim.git
-fi

@@ -1,7 +1,7 @@
 {
   "custom/launch_rofi": {
     "format": "",
-    "on-click": "rofi -show drun -theme $HOME/.config/rofi/launcher.rasi",
+    "on-click": "rofi -replace -show drun",
     "tooltip": false
   },
 
@@ -15,7 +15,7 @@
 
   "hyprland/workspaces": {
     "persistent-workspaces": {
-             "*": 5,
+      "*": 5
     }
   },
 
@@ -115,7 +115,7 @@
 
   "clock": {
     "format": "{:%H:%M} ",
-    "format-alt": "{:L%A, %B %d, %Y (%R)} ",
+    "format-alt": "{:L%d %B %A %Y (%R)} ",
     "timezones": ["Europa/Istanbul"],
     "tooltip-format": "<span size='9pt' font='JetBrainsMono Nerd Font Mono'>{calendar}</span>",
     "calendar": {
@@ -200,9 +200,9 @@
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
     "format-disconnected": "",
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-    "tooltip-format-wifi": "{ifname}\n\n{essid}\t({signalStrength}%)\t{ipaddr}\nDown: {bandwidthDownBits}\tUp: {bandwidthUpBits}",
+    "tooltip-format-wifi": "{ifname}\n\n{essid}\t{signalStrength}%\t{ipaddr}\nDown: {bandwidthDownBits}\tUp: {bandwidthUpBits}",
     "tooltip-format-ethernet": "{ifname} ",
-    "tooltip-format-disconnected": "Disconnected",
+    "tooltip-format-disconnected": "Bağlantı Yok",
     "max-length": 50
   },
 

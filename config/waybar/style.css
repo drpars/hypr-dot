@@ -1,5 +1,5 @@
 * {
-  font-family: "Ubuntu Nerd Font";
+  font-family: Ubuntu Nerd Font;
   font-weight: bold;
   font-size: 14px;
   min-height: 28px;
@@ -10,7 +10,7 @@
 
 window#waybar {
   background: transparent;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 window#waybar.empty #window {
@@ -34,7 +34,6 @@ tooltip label {
 
 /* module left */
 #custom-launch_rofi,
-#workspaces,
 #custom-hardware,
 #cpu,
 #memory,
@@ -77,17 +76,38 @@ tooltip label {
 }
 
 #workspaces {
-  margin-right: 10px;
+  background: #1e1e2e;
+  margin: 8px 10px 0px 0px;
+  opacity: 0.8;
   border-radius: 0px 10px 10px 0px;
   padding: 0px 10px 0px 10px;
 }
-#workspaces button.active {
-  background: #11111b;
-  color: #ffffff;
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 15px;
+    border: 0px;
+    color: #1e1e2e;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.4;
 }
+
+#workspaces button.active {
+    color: #1e1e2e;
+    background: #FFFFFF;
+    border-radius: 15px;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
 #workspaces button:hover {
-  background: #11111b;
-  color: #ebeefa;
+    color: #1e1e2e;
+    background: #FFFFFF;
+    border-radius: 15px;
+    opacity:0.7;
 }
 
 #custom-hardware {
@@ -126,10 +146,10 @@ tooltip label {
 }
 
 #window {
-  font-family: "JetBrainsMono Nerd Font Bold Italic";
+  /* font-family: "JetBrainsMono Nerd Font Bold Italic"; */
   font-style: italic;
-  font-weight: bold;
-  font-size: 13px;
+  /* font-weight: bold; */
+  /* font-size: 13px; */
   border-radius: 10px;
   padding: 0px 20px 0px 20px;
 }

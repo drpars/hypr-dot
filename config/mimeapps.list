@@ -1,9 +1,9 @@
 [Added Associations]
 application/x-desktop=nvim.desktop;
 application/x-shellscript=nvim.desktop;
-image/heif=imv-8.desktop;imv-7.desktop;imv-4.desktop;
-image/jpeg=imv-9.desktop;imv-6.desktop;imv-5.desktop;imv-2.desktop;
-image/png=imv-10.desktop;imv-3.desktop;
+image/heif=imv-dir.desktop;
+image/jpeg=imv-dir.desktop;
+image/png=imv-dir.desktop;
 inode/directory=org.kde.dolphin.desktop;
 text/plain=nvim.desktop;
 text/x-csrc=nvim.desktop;
@@ -11,9 +11,9 @@ text/x-csrc=nvim.desktop;
 [Default Applications]
 application/x-desktop=nvim.desktop;
 application/x-shellscript=nvim.desktop;
-image/heif=imv-8.desktop;
-image/jpeg=imv-9.desktop;
-image/png=imv-10.desktop;
+image/heif=imv.desktop;
+image/jpeg=imv-dir.desktop;
+image/png=imv-dir.desktop;
 inode/directory=org.kde.dolphin.desktop
 text/plain=nvim.desktop;
 text/x-csrc=nvim.desktop;
