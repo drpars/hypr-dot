@@ -109,6 +109,7 @@
       "pending-updates": "",
       "updated": ""
     },
+    "on-click": "waybar-updates",
     "exec-if": "which waybar-updates",
     "exec": "waybar-updates"
   },
@@ -207,6 +208,7 @@
   },
 
   "battery": {
+    "interval": 1,
     "states": {
       "good": 70,
       "warning": 30,

@@ -20,6 +20,7 @@ export PATH="$PATH:$HOME/.local/bin"
 alias v=nvim
 alias sv='sudo nvim'
 alias install='sudo pacman -S --needed'
+alias remove='sudo pacman -R'
 alias update='yay --noconfirm'
 alias full-update='yay --devel'
 alias ssh_clear='rm ~/.ssh/known_hosts'
@@ -34,6 +35,12 @@ alias shutdown='systemctl poweroff'
 alias apkinstall='waydroid app install'
 alias apkremove='waydroid app remove'
 alias fontsearch='$HOME/.config/scripts/fontsearch'
+alias fontupdate='fc-cache -f -v'
 alias pngtojpg='mogrify -format jpg'
 alias jpgtopng='mogrify -format png'
-# neofetch
+alias wifion='iwctl device wlan0 set-property Powered on'
+alias wifioff='iwctl device wlan0 set-property Powered off'
+alias bluetoothon='echo -e "power on" | bluetoothctl >/dev/null'
+alias bluetoothoff='echo -e "power off" | bluetoothctl >/dev/null'
+
+fastfetch --config examples/12
