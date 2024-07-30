@@ -1,20 +1,29 @@
+/*
+ * ROFI color theme
+ *
+ * Based on Something Found in the Internet
+ *
+ * User: Contributors
+ * Copyright: *!
+ */
+
 * {
-  font   : "Ubuntu Nerd Font 11";
+  border    : 0;
+  margin    : 0;
+  padding   : 0;
+  spacing   : 0;
+  dpi       : 128;
 
-  bg1    : #1a1b26; 
-  bg2    : #494d64;
-  bg3    : rgb(21,22,30,0.85);
-  txt    : #cad3f5;
-  txt2   : #505462;
-  brdr   : #ffe9a0;
-  accent : #a9b1d6;
-  urgent : @accent;
-  background-color : @bg3;
-  text-color       : #FFFFFFFF;
+  bg        : #1a1b26;
+  bg3       : rgb(21,22,30,0.9);
+  bg-alt    : #232433;
+  fg        : #6a6f87;
+  fg-alt    : #a9b1d6;
+  txt       : #cad3f5;
+  brdr      : #ffe9a0; 
 
-  margin  : 0;
-  padding : 0;
-  spacing : 0;
+  background-color  : @bg3;
+  text-color        : @fg;
 }
 
 configuration {
@@ -29,75 +38,42 @@ window {
   height              : 180px;
   x-offset            : 0px;
   y-offset            : 10px;
-  spacing             : 0px;
-  padding             : 0px;
-  margin              : 0px; 
   border              : 1px;
   border-color        : @brdr;
   transparency        : "real";
   location            : north;
   anchor              : center;
   border-radius       : 6px;
-  background-color    : @bg3;
 }
 
 mainbox {
   enabled           : true;
   orientation       : horizontal;
-  spacing           : 0px;
-  margin            : 0px;
   border-color      : @brdr;
   background-color  : transparent;
-  children          : ["listbox"];
-}
-
-listbox {
-  spacing           : 20px;
-  background-color  : transparent;
-  orientation       : vertical;
-  children          : [ "listview" ];
+  children          : [listview];
 }
 
 listview {
+  transparency      : "real";
   spacing           : 10px;
   padding           : 10px;
-  margin            : 0px;
   columns           : 1;
-  cycle             : true;
+  cycle             : false;
   layout            : horizontal;
-  border            : 0px;
   background-color  : transparent;
 }
 
 element {
-  padding           : 0px;
   margin            : 5px;
   border            : 2px;
   border-radius     : 6px;
-  background-color  : transparent;
   layout            : vertical;
-}
-element normal.normal {
-  border            : 0px solid;
-  border-color      : @brdr;
-  background-color  : transparent;
-  text-color        : #FFFFFFFF;
-}
-
-element alternate.normal {
-  border            : 0px solid;
-  border-color      : @brdr;
-  background-color  : transparent;
-  text-color        : #FFFFFFFF;
-}
-
-element selected.normal {
-  border-color      : @brdr;
-  background-color  : @accent;
-  text-color        : #FFFFFFFF;
+  children          : [element-icon, element-text];
 }
 
 element-icon {
+  background-color  : transparent;
   size              : 140px;
   vertical-align    : 0.5;
   horizontal-align  : 0.5;
@@ -105,4 +81,38 @@ element-icon {
 
 element-text {
   enabled           : false;
+}
+
+element normal.normal {
+  border            : 0px;
+  border-color      : @brdr;
+  background-color  : transparent;
+}
+
+element normal.active {
+  border            : 0px;
+  border-color      : @brdr;
+  background-color  : transparent;
+}
+
+element selected.normal {
+  border-color      : @brdr;
+  background-color  : @fg-alt;
+}
+
+element selected.active {
+  border-color      : @brdr;
+  background-color  : @fg-alt;
+}
+
+element alternate.normal {
+  border            : 0px;
+  border-color      : @brdr;
+  background-color  : transparent;
+}
+
+element alternate.active {
+  border            : 0px;
+  border-color      : @brdr;
+  background-color  : transparent;
 }

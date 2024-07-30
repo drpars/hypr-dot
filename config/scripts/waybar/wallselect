@@ -6,7 +6,7 @@ DIR=$(xdg-user-dir PICTURES)/Wallpaper
 
 # Transition config
 bezier=.43,1.19,1,.99
-fps=30      # defult 30
+fps=165     # defult 30
 type="wave" # simple | wipe | any | grow
 duration=3
 swww_opt="--transition-bezier $bezier --transition-fps $fps --transition-type $type --transition-duration $duration"
@@ -21,10 +21,10 @@ astyle() {
 }
 
 bstyle() {
-selected=$(find "$(xdg-user-dir PICTURES)/Wallpaper" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile; do
-echo -en "$rfile\x00icon\x1f$(xdg-user-dir PICTURES)/Wallpaper/${rfile}\n"
-done | rofi -dmenu -replace -config ~/.config/rofi/wallselect.rasi)
-swww img $(xdg-user-dir PICTURES)/Wallpaper/$selected $swww_opt
+  selected=$(find "$DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -g | while read -r rfile; do
+  echo -en "$rfile\x00icon\x1f$DIR/${rfile}\n"
+  done | rofi -dmenu -replace -theme ~/.config/rofi/wallselect.rasi -disable-history)
+  swww img "$DIR"/$selected $swww_opt
 }
 
 # Choose one of style

@@ -1,7 +1,7 @@
 {
   "custom/launch_rofi": {
     "format": "",
-    "on-click": "rofi -replace -show drun",
+    "on-click": "rofi -replace -show drun -theme ~/.config/rofi/launcher.rasi -disable-history",
     "tooltip": false
   },
 

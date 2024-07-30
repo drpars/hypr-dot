@@ -33,31 +33,60 @@ configuration {
     delay   : 10;
     action  : "kb-cancel";
   }
+  modi                : "drun,filebrowser,window";
+  show-icons          : true;
+	icon-theme          : "Qogir-dark";
+  display-drun        : " ";
+  display-run         : " ";
+	drun-display-format : "{name}";
+  display-filebrowser : " ";
+  display-window      : " ";
+  filebrowser {
+     directory          : "/home/drpars/";
+     directories-first  : true;
+     sorting-method     : "name";
+     show-hidden        : true;
+     command            : "xdg-open";
+  }
 }
 
 window {
-  transparency  : "reel";
-  location      : center;
-  width         : 800px;
-  border           : 1px;
-  border-radius    : 8px;
-  border-color     : @brdr; 
+  transparency      : "real";
+  width             : 800px;
+  border            : 1px;
+  border-radius     : 8px;
+  border-color      : @brdr; 
 }
 
 mainbox {
-  padding : 10px;
-  background-color : transparent;
-  children         : [ listview ];
+  padding           : 10px;
+  children          : [inputbar, listview];
+  background-color  : transparent;
+}
+
+inputbar {
+  enabled           : false;
+  background-color  : @bg-alt;
+  children          : [prompt, entry];
+}
+
+entry {
+  padding           : 12px 3px;
+}
+
+prompt {
+  padding           : 12px;
 }
 
 listview {
-  columns       : 1;
-  lines         : 8;
-  background-color : transparent;
+  background-color  : transparent;
+  transparency      : "real";
+  columns           : 2;
+  lines             : 8;
 }
 
 element {
-  border-radius : 2px;
+  border-radius     : 2px;
   children          : [element-icon, element-text];
 }
 
