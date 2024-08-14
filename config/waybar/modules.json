@@ -111,7 +111,7 @@
     },
     "on-click": "waybar-updates",
     "exec-if": "which waybar-updates",
-    "exec": "waybar-updates"
+    "exec": "waybar-updates --format '{total}{ (+:aur: AUR)}'"
   },
 
   "clock": {

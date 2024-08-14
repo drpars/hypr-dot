@@ -89,7 +89,7 @@ shell_directory_timeout=900
 
 [Layout]
 output_lines=0
-left_panel_size=63
+left_panel_size=126
 top_panel_size=0
 message_visible=true
 keybar_visible=true
@@ -143,5 +143,5 @@ select_flags=6
 [Panelize]
 Değiştirilmiş git dosyaları=git ls-files --modified
 Yamadan sonraki reddedilenleri bul=find . -name \\*.rej -print
-Yamadan sonraki .orig dosyalarını bul=find . -name \\*.orig -print
 SUID ve SGID uygulamaları bul=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
+Yamadan sonraki .orig dosyalarını bul=find . -name \\*.orig -print
