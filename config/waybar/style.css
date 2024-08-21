@@ -84,30 +84,30 @@ tooltip label {
 }
 
 #workspaces button {
-    padding: 0px 5px;
-    margin: 4px 3px;
-    border-radius: 15px;
-    border: 0px;
-    color: #1e1e2e;
-    background-color: #FFFFFF;
-    transition: all 0.3s ease-in-out;
-    opacity: 0.4;
+  padding: 0px 5px;
+  margin: 4px 3px;
+  border-radius: 15px;
+  border: 0px;
+  color: #1e1e2e;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.4;
 }
 
 #workspaces button.active {
-    color: #1e1e2e;
-    background: #FFFFFF;
-    border-radius: 15px;
-    min-width: 40px;
-    transition: all 0.3s ease-in-out;
-    opacity:1.0;
+  color: #1e1e2e;
+  background: #ffffff;
+  border-radius: 15px;
+  min-width: 40px;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
 }
 
-#workspaces button:hover {
-    color: #1e1e2e;
-    background: #FFFFFF;
-    border-radius: 15px;
-    opacity:0.7;
+#workspaces button.hover {
+  color: #1e1e2e;
+  background: #ffffff;
+  border-radius: 15px;
+  opacity: 0.7;
 }
 
 #custom-hardware {

@@ -9,6 +9,7 @@ image/vnd.microsoft.icon=imv-dir-5.desktop;
 inode/directory=org.kde.dolphin.desktop;
 text/plain=nvim.desktop;
 text/x-csrc=nvim.desktop;
+video/mp4=mpv.desktop;
 
 [Default Applications]
 application/x-desktop=nvim.desktop;
@@ -21,3 +22,4 @@ image/vnd.microsoft.icon=imv-dir-5.desktop;
 inode/directory=org.kde.dolphin.desktop
 text/plain=nvim.desktop;
 text/x-csrc=nvim.desktop;
+video/mp4=mpv.desktop;

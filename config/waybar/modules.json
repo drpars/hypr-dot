@@ -1,8 +1,9 @@
 {
   "custom/launch_rofi": {
     "format": "",
-    "on-click": "rofi -replace -show drun -theme ~/.config/rofi/launcher.rasi -disable-history",
-    "tooltip": false
+    "on-click": "nwg-menu",
+    "tooltip": false,
+      "margin-top": 10,
   },
 
   "custom/weather": {
@@ -10,7 +11,8 @@
     "return-type": "json",
     "format": "{}",
     "tooltip": true,
-    "interval": 3600
+    "interval": 3600,
+    "on-click": "~/.config/scripts/waybar/get_weather Çankırı",
   },
 
   "hyprland/workspaces": {
@@ -109,9 +111,9 @@
       "pending-updates": "",
       "updated": ""
     },
-    "on-click": "waybar-updates",
+    "on-click": "waybar-updates --tooltip '{ :pacman}{  :aur}{  :dev}'",
     "exec-if": "which waybar-updates",
-    "exec": "waybar-updates --format '{total}{ (+:aur: AUR)}'"
+    "exec": "waybar-updates --tooltip '{ :pacman}{  :aur}{  :dev}'",
   },
 
   "clock": {
@@ -218,7 +220,7 @@
     "format-alt": "{time} {icon}",
     "full-at": 100,
     "format-full": "{icon} Full",
-    "format-charging": "",
+    "format-charging": "󰂄",
     "format-plugged": "",
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "tooltip": true,
