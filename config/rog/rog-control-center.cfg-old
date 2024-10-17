@@ -6,8 +6,6 @@
     bat_command: "",
     dark_mode: true,
     start_fullscreen: false,
-    fullscreen_width: 1920,
-    fullscreen_height: 1080,
     notifications: (
         enabled: false,
         receive_notify_gfx: true,

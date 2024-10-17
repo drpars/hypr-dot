@@ -99,13 +99,13 @@ shadeSortColumn=true
 widgetStyle=Lightly
 
 [Icons]
-Theme=lightly
+Theme=Qogir-dark
 
 [KDE]
 ColorScheme=Lightly
 ShowDeleteCommand=false
 contrast=10
-widgetStyle=Lightly
+widgetStyle=qt6ct-style
 
 [KFileDialog Settings]
 Allow Expansion=false

@@ -10,6 +10,7 @@ inode/directory=org.kde.dolphin.desktop;
 text/plain=nvim.desktop;
 text/x-csrc=nvim.desktop;
 video/mp4=mpv.desktop;
+video/quicktime=mpv.desktop;
 
 [Default Applications]
 application/x-desktop=nvim.desktop;
@@ -23,3 +24,5 @@ inode/directory=org.kde.dolphin.desktop
 text/plain=nvim.desktop;
 text/x-csrc=nvim.desktop;
 video/mp4=mpv.desktop;
+video/quicktime=mpv.desktop;
+x-scheme-handler/discord-1221314350216646828=discord-1221314350216646828.desktop
