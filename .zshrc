@@ -2,7 +2,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # theme/plugins
-ZSH_THEME="duellj"
+# ZSH_THEME="gnzh"
+ZSH_THEME="spaceship"
 plugins=(git sudo history-substring-search colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
@@ -25,7 +26,7 @@ alias update='yay --noconfirm'
 alias full-update='yay --devel'
 alias ssh_clear='rm ~/.ssh/known_hosts'
 alias ls='eza -a --icons --group-directories-first'
-# alias ll='exa -al --color=always --icons --group-directories-first'
+alias ll='eza -al -h --color=always --icons --group-directories-first --octal-permissions'
 alias lt='eza -a --tree --level=1 --icons --group-directories-first'
 alias gs='git status'
 alias py='python'
