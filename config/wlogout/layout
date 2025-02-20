@@ -12,7 +12,7 @@
 }
 {
     "label" : "logout",
-    "action" : "~/.config/scripts/exit",
+    "action" : hyprctl dispatch exit,
     "text" : "Oturumu kapat",
     "keybind" : "q"
 }
