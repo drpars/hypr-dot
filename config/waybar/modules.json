@@ -3,7 +3,7 @@
     "format": "",
     "on-click": "rofi -show drun -disable-history -replace -theme ~/.config/rofi/launcher.rasi",
     "tooltip": false,
-      "margin-top": 10,
+    "margin-top": 10
   },
 
   "custom/weather": {
@@ -12,7 +12,7 @@
     "format": "{}",
     "tooltip": true,
     "interval": 3600,
-    "on-click": "~/.config/scripts/waybar/get_weather Çankırı",
+    "on-click": "~/.config/scripts/waybar/get_weather Çankırı"
   },
 
   "hyprland/workspaces": {
@@ -113,7 +113,7 @@
     },
     "on-click": "waybar-updates --tooltip '{ :pacman}{  :aur}{  :dev}'",
     "exec-if": "which waybar-updates",
-    "exec": "waybar-updates --tooltip '{ :pacman}{  :aur}{  :dev}'",
+    "exec": "waybar-updates --tooltip '{ :pacman}{  :aur}{  :dev}'"
   },
 
   "clock": {
@@ -162,7 +162,8 @@
 
   "tray": {
     "icon-size": 18,
-    "spacing": 10
+    "spacing": 10,
+    "show-passive-items": true
   },
 
   "custom/power_profile": {
@@ -235,6 +236,8 @@
     "format": "{icon}",
     // "format-alt": "{icon} {percent}%",
     "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "on-click": "$HOME/.config/scripts/waybar/brightness up",
+    "on-click-right": "$HOME/.config/scripts/waybar/brightness down",
     "on-scroll-up": "$HOME/.config/scripts/waybar/brightness up",
     "on-scroll-down": "$HOME/.config/scripts/waybar/brightness down",
     "tooltip-format": "{percent}%"
