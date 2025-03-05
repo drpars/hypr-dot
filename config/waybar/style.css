@@ -246,11 +246,13 @@ tooltip label {
 }
 
 #battery.warning {
+  animation-iteration-count: infinite;
   animation-name: blink-update;
   animation-duration: 3s;
 }
 
 #battery.critical {
+  animation-iteration-count: infinite;
   animation-name: blink-battery;
   animation-duration: 3s;
 }
